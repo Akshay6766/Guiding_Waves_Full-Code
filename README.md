@@ -1,24 +1,5 @@
-What problem are you going to solve?
-Addressing the challenges faced by visually impaired individuals while swimming especially directional control,turns and flips,collision avoidance,etc
-
-What are you going to build to solve this problem? How is it different from existing solutions? Why is it useful?
-Utilizing an amalgamation of technologies, including cameras, sonar, gyroscopes, and various tracking sensors, my aim to develop an innovative Assistive Guidance belt that facilitates visually impaired individuals in swimming straight and collision-free. The proposed device ensures the swimmer's navigation by providing real-time auditory cues through a headset or a series of haptic vibrations.
-
-Currently, prevalent solutions involve tapping on a helmet to signal swimmers upon nearing the pool's end, prompting them to reduce speed to avoid collisions. However, such methods lack any directional guidance during swimming.
-
-By introducing the Assistive Guidance belt, my intend to revolutionize this scenario. This innovative belt combines the power of cameras, sonar, gyroscopes, and other tracking sensors to offer dynamic, real-time navigational support. As the swimmer progresses, the belt processes data from these sensors, allowing the device to determine the optimal course and provide immediate feedback.
-
-Through auditory cues transmitted via a headset or haptic vibrations, the swimmer receives continuous orientation information. This eliminates the requirement for a second person to guide them and promotes an independent swimming experience. The Assistive Guidance belt goes beyond mere collision avoidance; it empowers visually impaired individuals to swim confidently in a straight line while being aware of their surroundings at all times.
-
-How does your solution work? What are the main features? Please specify how you will use the Inclusive Innovation Challenge Hardware in your solution.
- This innovative belt combines the power of cameras, sonar, gyroscopes, and other tracking sensors to offer dynamic, real-time navigational support. As the swimmer progresses, the belt processes data from these sensors, allowing the device to determine the optimal course and provide immediate feedback.
-Through auditory cues transmitted via a headset or haptic vibrations, the swimmer receives continuous orientation information. This eliminates the requirement for a second person to guide them and promotes an independent swimming experience.
-
-Main Features are:-
-
-Realtime navigational support,
-collision avoidance,
-roll alert,
-Emerency Alert System,
-Emergency Airbag System.
-
+ Its been 7years since i have posted a project on hackster.even if i do some some projects i have been so lazy to document it and post it, i always broke it and rebuild on existing components. this time out of the blue I receive a mail from hackster regarding Build2Gether inclusive Inonovation challenge.when i read about the contest i really loved the challenge and dcided to submit a entry just hoping to get a piece of hardware.i was really intrested in swimming challenge category because until hearing about this challenge i never thought about blind people swimming.and the novel idea of challenge really had me thinking "How Would they Swim".then i have started searching on how blind people swim and it lead me to the paralympics swimming event i have watched some of national records and events and got a glimpse into blind swimming how the tapper taps on swimmer helmet to notify them of pool end and slow down and how the swimmers know their sorrounding and zig zag swimming and all
+With All those glimpses and glance i got an idea to remove the tapper by giving the swimmer a feedback belt with position monitoring with ultrasonic sensor and angle notification with Gyroscope.
+this was initial idea as time goes on the Guiding Waves become Enriched with Features Like Airbag system,GPS System,Location Monitoring Etc.
+ 
+By introducing the Assistive Guidance belt, my intend to revolutionize blind Swimming scenario. This innovative belt combines the power of  sonar, gyroscopes, and other tracking sensors to offer dynamic, real-time navigational support. As the swimmer progresses, the belt processes data from these sensors, allowing the device to determine the optimal course and provide immediate feedback.  Through auditory cues transmitted via  haptic vibrations, the swimmer receives continuous orientation information from Haptic Vibration Sensor. This eliminates the requirement for a second person to guide them and promotes an independent swimming experience. The Assistive Guidance belt goes beyond mere collision avoidance; it empowers visually impaired individuals to swim confidently in a straight line while being aware of their surroundings at all times.This belt also comes with emergency features Like Airbag Deployment,Laser light to attract guards during emergency etc
