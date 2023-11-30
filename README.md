@@ -16,10 +16,9 @@ Through auditory cues transmitted via a headset or haptic vibrations, the swimme
 
 Main Features are:-
 
-Realtime navigational support
-collision avoidance
-roll alert
-Emerency Alert System
-Emergency Airbag System
+Realtime navigational support,
+collision avoidance,
+roll alert,
+Emerency Alert System,
+Emergency Airbag System.
 
-The Google Coral Dev microcontroller stands out as the most suitable choice for this project due to its incorporation of the Coral Edge TPU and M7 processors. This combination is particularly well-suited for efficient small-scale ML inferencing. Additionally, the built-in camera feature eliminates the need for integrating an external camera, making it an ideal fit for this project.
