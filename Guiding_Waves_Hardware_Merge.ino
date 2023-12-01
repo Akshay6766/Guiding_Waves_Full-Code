@@ -40,6 +40,9 @@ GND  on extended Common GND on arduino female to breadboard
 
 Pressure Motor
 
+Digital Pin 13
+GND on extended Common GND on arduino female to breadboard 
+
 Motor Right
 
 Digital Pin 11
@@ -81,6 +84,9 @@ float AngleRoll, AnglePitch;
 float LoopTimer;
 int16_t ax, ay, az,gx, gy, gz;
 float accAngleX, accAngleY;
+int starttime = 0;
+int endtime = 0;
+int loopcount =0;
 
 SFE_BMP180 bmp180;
 MPU6050 accelgyro; //(0x68); // <-- use for AD0 high
@@ -107,10 +113,11 @@ void setup()
 
 Serial.begin(115200);
 mySerial.begin(115200);
-//pinMode(9, OUTPUT); // left laser
+
 pinMode(12, OUTPUT); //right laser and left on one pin
 pinMode(11, OUTPUT); //left motor
 pinMode(10, OUTPUT);//right motor
+pinMode(13, OUTPUT);//right motor
 
 //gps side
   delay(1000);
@@ -138,6 +145,7 @@ pinMode(10, OUTPUT);//right motor
   accelgyro.testConnection() ;
 
   delay(1000);
+  /*
   // reset offsets
   accelgyro.setXAccelOffset(1816);
   accelgyro.setYAccelOffset(1134);
@@ -145,6 +153,7 @@ pinMode(10, OUTPUT);//right motor
   accelgyro.setXGyroOffset(60);
   accelgyro.setYGyroOffset(71);
   accelgyro.setZGyroOffset(19);
+  */
 
 //UL Side
 pinMode(trigPin1, OUTPUT);
@@ -168,7 +177,9 @@ if (success) {
 void loop() {
 
 
-
+digitalWrite(13,HIGH);
+delay(100);
+digitalWrite(13,LOW);
  
   bool newdata = false;
   unsigned long start = millis();
@@ -233,12 +244,27 @@ Serial.print(" meters");
               Serial.println("I M Drowning");
             //  digitalWrite(9,HIGH);
               digitalWrite(12,HIGH);
+              starttime = millis();
+              endtime = starttime;
+              while ((endtime - starttime) <=11000) 
+                {
+                digitalWrite(13,HIGH);
+                Serial.println("Airbag Inflation started");
+                delay(10000);//Time for Max Inflation 10s
+                digitalWrite(13,LOW);
+                loopcount = loopcount+1;
+                endtime = millis();
+                }
+              Serial.print ("Airbag Inflated Max");
+
+
 
             }
             else 
             {
               //digitalWrite(9,LOW);
               digitalWrite(12,LOW);
+              digitalWrite(13,LOW);
             }
           
         }
