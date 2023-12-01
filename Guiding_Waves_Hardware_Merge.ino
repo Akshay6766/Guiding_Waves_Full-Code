@@ -1,5 +1,7 @@
 /*
 
+Wiring Instructions 
+
 Ultrasonic Sensor
 
 trigpin1 9 orange sensor front ul
@@ -55,8 +57,9 @@ GND on extended Common GND on arduino female to breadboard
 
 Leftover Pins
 
-0,1,13,GND,5V,A0,A1,A2,A3
+0,1,A0,A1,A2,A3
 
+Guiding Waves Primary Code
 */
 
 
@@ -145,15 +148,15 @@ pinMode(13, OUTPUT);//right motor
   accelgyro.testConnection() ;
 
   delay(1000);
-  /*
-  // reset offsets
+  
+  
   accelgyro.setXAccelOffset(1816);
   accelgyro.setYAccelOffset(1134);
   accelgyro.setZAccelOffset(4736);
   accelgyro.setXGyroOffset(60);
   accelgyro.setYGyroOffset(71);
   accelgyro.setZGyroOffset(19);
-  */
+  
 
 //UL Side
 pinMode(trigPin1, OUTPUT);
@@ -310,6 +313,8 @@ Serial.print(" meters");
       Serial.println("Full Gyro right");
       
       digitalWrite(11,HIGH);
+      delay(200);
+      digitalWrite(11,LOW);
       digitalWrite(8,LOW);
       digitalWrite(12,LOW);
       digitalWrite(10,LOW);
@@ -318,7 +323,10 @@ Serial.print(" meters");
     {
       Serial.println("Full Gyro left");
 
+     
       digitalWrite(10,HIGH);
+      delay(200);
+      digitalWrite(10,LOW);
       digitalWrite(8,LOW);
       digitalWrite(12,LOW);
       digitalWrite(11,LOW);
@@ -358,6 +366,11 @@ Serial.println();
 if (LeftSensor < value && FrontSensor < value && RightSensor < value)
   {
     Serial.println("Obstacle coverd Go Back");
+      digitalWrite(10,HIGH);
+      digitalWrite(11,HIGH);
+      delay(200);
+      digitalWrite(10,LOW);
+      digitalWrite(11,LOW);
   }
     else if (LeftSensor < value &&  RightSensor < value )
       {
@@ -367,22 +380,48 @@ if (LeftSensor < value && FrontSensor < value && RightSensor < value)
       else if (LeftSensor < value && FrontSensor < value)
         {
           Serial.println("Obstacle On front and Left Side Go Right");
+          digitalWrite(11,HIGH);
+          delay(300);
+          digitalWrite(11,LOW);
         }
         else if (FrontSensor < value && RightSensor < value)
           {
             Serial.println("Obstacle On front and right Side Go Left");
+            digitalWrite(10,HIGH);
+            delay(300);
+            digitalWrite(10,LOW);
           }
           else if (LeftSensor < value)
            {
               Serial.println("Obstacle on Left Sensor");
+              digitalWrite(10,HIGH);
+              delay(300);
+              digitalWrite(10,LOW);
            }
            else if (FrontSensor < value)
             {
               Serial.println("Obstacle on Front Sensor");
+              if (RightSensor < value)
+              {
+                 digitalWrite(11,HIGH);
+                 delay(300);
+                 digitalWrite(11,LOW);
+              }
+              if (LeftSensor < value)
+              {
+                 digitalWrite(11,HIGH);
+                 delay(300);
+                 digitalWrite(11,LOW);
+              }
+                
+              
             }
             else if (RightSensor < value)
               {
                 Serial.println(" Obstacle on RightSensor");
+                 digitalWrite(11,HIGH);
+                 delay(300);
+                 digitalWrite(11,LOW);
               }
       
    else
@@ -392,11 +431,13 @@ if (LeftSensor < value && FrontSensor < value && RightSensor < value)
     //digitalWrite(blue,  LOW);
     //digitalWrite(13,    LOW);
     Serial.println("Chuck Chuck No Obstacle");
+    digitalWrite(10,LOW);
+    digitalWrite(11,LOW);
   }
 
 
 
-delay(200);
+delay(150); //ensure smooth function of block 
 
 
 
